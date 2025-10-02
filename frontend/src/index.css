@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+  
+body {
+   
+    
+    margin: 0;
+   padding-left: 10px;   /* Left side ka padding */
+    padding-right: 10px;  /* Right side ka padding */
+    box-sizing: border-box;
+    background-color: #0d0f16;
+  }
+  
+/* Default cursor hide */
+* {
+  cursor: none !important;
+}
+
+/* Main dot (cursor point) */
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;               /* pehle 6px tha -> ab thoda bada */
+  height: 8px;
+  background-color: #d4f10f; /* neon yellow */
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 10px rgba(212, 241, 15, 0.8); /* glow effect */
+}
+
+/* Outer circle follower */
+.cursor-follower {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 30px;               /* thoda bada circle */
+  height: 30px;
+  border: 2px solid #d4f10f;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: transform 0.15s ease-out;
+}
+
+
+
+
+
+@keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  .animate-spin-slow {
+    animation: spin-slow 12s linear infinite;
+  }
+  
+  @keyframes spin-slow-reverse {
+    from { transform: rotate(360deg); }
+    to { transform: rotate(0deg); }
+  }
+  .animate-spin-slow-reverse {
+    animation: spin-slow-reverse 12s linear infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+  .animate-float {
+    animation: float 4s ease-in-out infinite;
+  }
+  
+  @keyframes moveSmooth {
+    0% {
+      transform: translateX(-30px); /* Start position */
+    }
+    50% {
+      transform: translateX(30px); /* Move to the right */
+    }
+    100% {
+      transform: translateX(0); /* End at the center */
+    }
+  }
+  
+  .animate-move-smooth {
+    animation: moveSmooth 2s ease-in-out infinite;
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .animate-fadeIn {
+    animation: fadeIn 1s forwards;
+  }
+  
