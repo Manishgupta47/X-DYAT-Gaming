@@ -27,7 +27,7 @@ const RegisterInner = () => {
     }
 
     try {
-      const response = await axios.post("http://localhost:5000/register", {
+      const response = await axios.post("https://x-dyat-gaming.onrender.com/register", {
         name,
         email,
         password,
